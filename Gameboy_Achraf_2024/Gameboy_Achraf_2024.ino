@@ -48,7 +48,7 @@ void loop() {
   // Vérification des mouvements du joystick et mise à jour de la position
   if (abs(xValue - 512) > threshold)
   {
-     pointX -= map(xValue, 0, 1023, -speed, speed);
+     pointX -= map(xValue, 0, 1023, -speed, speed); // blague interpolation line
       // I2S.write(sample);
   }
   if (abs(yValue - 512) > threshold)
