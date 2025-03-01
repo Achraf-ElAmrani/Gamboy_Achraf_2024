@@ -39,11 +39,15 @@ void setup() {
   // Initialisation du MCP23008
   mcp.begin();
 
-  // Configurer les broches comme entrées pour les boutons
+  // Configurer les broches comme entrées pour les boutons avec pull-ups
   mcp.pinMode(BUTTON1, INPUT);
+  mcp.pullUp(BUTTON1, HIGH);
   mcp.pinMode(BUTTON2, INPUT);
+  mcp.pullUp(BUTTON2, HIGH);
   mcp.pinMode(BUTTON3, INPUT);
+  mcp.pullUp(BUTTON3, HIGH);
   mcp.pinMode(BUTTON4, INPUT);
+  mcp.pullUp(BUTTON4, HIGH);
 }
 
 void loop() {
