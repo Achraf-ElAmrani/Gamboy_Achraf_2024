@@ -18,6 +18,9 @@
 // Initialisation de l'écran ILI9341
 Adafruit_ILI9341 tft(TFT_CS, TFT_DC, TFT_RST);
 
+// Initialisation du MCP23008 pour la gestion des boutons
+Adafruit_MCP23008 mcp;
+
 // Position initiale du point
 int pointX = 120, pointY = 160;
 const int Radius = 5, threshold = 50, speed = 15; // Si la variation est inférieure à threshold = zone morte (50), elle est ignorée
@@ -32,6 +35,15 @@ void setup() {
   tft.setRotation(3);  // Orientation de l'écran
   tft.fillScreen(ILI9341_BLACK);  // Effacement de l'écran
   drawPoint(pointX, pointY, ILI9341_WHITE);  // Affichage du point initial
+
+  // Initialisation du MCP23008
+  mcp.begin();
+
+  // Configurer les broches comme entrées pour les boutons
+  mcp.pinMode(BUTTON1, INPUT);
+  mcp.pinMode(BUTTON2, INPUT);
+  mcp.pinMode(BUTTON3, INPUT);
+  mcp.pinMode(BUTTON4, INPUT);
 }
 
 void loop() {
@@ -48,5 +60,12 @@ void loop() {
 
   drawPoint(oldX, oldY, ILI9341_BLACK);  // Effacer l'ancien point
   drawPoint(pointX, pointY, ILI9341_WHITE);  // Dessiner le nouveau point
+
+  // Vérification si un bouton est pressé pour remettre le point au centre
+  if (mcp.digitalRead(BUTTON1) == LOW) {
+    pointX = tft.width() / 2;  // Réinitialiser la position X au centre
+    pointY = tft.height() / 2;  // Réinitialiser la position Y au centre
+  }
   delay(50);  // Pause pour fluidifier le mouvement
 }
+
