@@ -1,4 +1,3 @@
-// Fonction pour dessiner un point à une position donnée avec une couleur spécifique
 #include "console.h"
 // Initialisation de l'écran ILI9341
 Adafruit_ILI9341 tft(TFT_CS, TFT_DC, TFT_RST);
@@ -27,7 +26,7 @@ void Menu(void){
     tft.println("2. Invaders");
 }
 
-void InitialisationBouton(void){
+void InitialisationButton(void){
   mcp.begin();
   // Configurer les broches comme entrées pour les boutons avec pull-ups
   mcp.pinMode(BUTTON1, INPUT);
@@ -68,4 +67,7 @@ void MettreAJourPosition(void){
       pointY = tft.height() / 2;  // Réinitialiser la position Y au centre
   }
   delay(50);  // Pause pour fluidifier le mouvement
+}
+bool buttonappuyer(int button){
+  return mcp.digitalRead(button) == LOW;
 }

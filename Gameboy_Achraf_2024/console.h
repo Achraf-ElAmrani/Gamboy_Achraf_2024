@@ -28,8 +28,8 @@ extern byte MODE_POINT;
 extern byte MODE_INVADERS;
 
 void drawPoint(int, int, uint16_t);
-
 void Menu(void);
-void InitialisationBouton(void);
+void InitialisationButton(void);
 void InitialisationEcran(void);
 void MettreAJourPosition(void);
+bool buttonappuyer(int button);

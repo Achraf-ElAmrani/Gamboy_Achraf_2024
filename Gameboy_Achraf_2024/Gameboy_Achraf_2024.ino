@@ -8,8 +8,9 @@
 
 void setup() {
 
-  InitialisationBouton();
   InitialisationEcran();
+  InitialisationButton();
+  Menu();
   
   while (Mode == 0) {
       if (mcp.digitalRead(BUTTON1) == LOW) Mode = MODE_POINT;
