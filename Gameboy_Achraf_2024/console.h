@@ -33,3 +33,4 @@ void InitialisationButton(void);
 void InitialisationEcran(void);
 void MettreAJourPosition(void);
 bool buttonappuyer(int button);
+int Deplacement(int ValeurJoystick);

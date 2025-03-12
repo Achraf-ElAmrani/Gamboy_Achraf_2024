@@ -8,6 +8,7 @@
 
 void setup() {
 
+  Serial.begin(9600);
   InitialisationEcran();
   InitialisationButton();
   Menu();

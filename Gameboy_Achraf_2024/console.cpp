@@ -71,3 +71,12 @@ void MettreAJourPosition(void){
 bool buttonappuyer(int button){
   return mcp.digitalRead(button) == LOW;
 }
+
+int Deplacement(int ValeurJoystick){
+ if (abs(ValeurJoystick - 512)> threshold){
+    return map(ValeurJoystick,0,1023,-speed,speed);
+ } else {
+  return 0;
+ }
+
+}
