@@ -26,6 +26,7 @@ extern Adafruit_ILI9341 tft;
 extern byte Mode;
 extern byte MODE_POINT;
 extern byte MODE_INVADERS;
+extern unsigned long Time_ms;
 
 void drawPoint(int, int, uint16_t);
 void Menu(void);

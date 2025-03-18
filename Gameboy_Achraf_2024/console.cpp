@@ -9,6 +9,7 @@ byte Mode = 0;
 byte MODE_POINT = 1;
 byte MODE_INVADERS = 2;
 Adafruit_MCP23008 mcp;
+unsigned long Time_ms = 0;
 
 void drawPoint(int x, int y, uint16_t color) {
   tft.fillCircle(x, y, Radius, color);
@@ -37,7 +38,6 @@ void InitialisationButton(void){
   mcp.pullUp(BUTTON3, HIGH);
   mcp.pinMode(BUTTON4, INPUT);
   mcp.pullUp(BUTTON4, HIGH);
-  Menu();
 }
 
 void InitialisationEcran(void){
@@ -58,15 +58,18 @@ void MettreAJourPosition(void){
       pointX = constrain(pointX, Radius, tft.width() - Radius);
       pointY = constrain(pointY, Radius, tft.height() - Radius);
 
-      drawPoint(oldX, oldY, ILI9341_BLACK);  // Effacer l'ancien point
-      drawPoint(pointX, pointY, ILI9341_WHITE);  // Dessiner le nouveau point
+      if (millis() >= Time_ms + 50) {
+       Time_ms = millis();
+
+       drawPoint(oldX, oldY, ILI9341_BLACK);  // Effacer l'ancien point
+       drawPoint(pointX, pointY, ILI9341_WHITE);  // Dessiner le nouveau point
+      }
 
   // Vérification si un bouton est pressé pour remettre le point au centre
       if (mcp.digitalRead(BUTTON1) == LOW) {
       pointX = tft.width() / 2;  // Réinitialiser la position X au centre
       pointY = tft.height() / 2;  // Réinitialiser la position Y au centre
   }
-  delay(50);  // Pause pour fluidifier le mouvement
 }
 bool buttonappuyer(int button){
   return mcp.digitalRead(button) == LOW;

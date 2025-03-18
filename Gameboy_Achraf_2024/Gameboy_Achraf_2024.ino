@@ -5,9 +5,9 @@
 // 08.03.2025
 
 #include "console.h"
+int cpt = 0;
 
 void setup() {
-
   Serial.begin(9600);
   InitialisationEcran();
   InitialisationButton();
@@ -19,25 +19,27 @@ void setup() {
   }
     
   tft.fillScreen(ILI9341_BLACK);
+
+  Time_ms = millis();
+
   if (Mode == MODE_POINT) {
       tft.setCursor(50, 100);
       tft.println("Mode: Point");
-      delay(1000);
-      pointX = tft.width() / 2;
-      pointY = tft.height() / 2;
   } else if (Mode == MODE_INVADERS) {
       tft.setCursor(50, 100);
       tft.println("Mode: Invaders");
-      delay(1000);
   }
 }
 
 void loop() {
-  if (Mode == MODE_POINT) {
+ if (Mode == MODE_POINT) {
+     if (millis() >= Time_ms + 1000) {
+      pointX = tft.width() / 2;
+      pointY = tft.height() / 2;
+     }
       MettreAJourPosition();
 }else if (Mode == MODE_INVADERS) {
         //mode Space Invaders
     }
+
 }
-
-
