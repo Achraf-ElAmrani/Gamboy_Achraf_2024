@@ -2,15 +2,22 @@
 # Console de jeux portable
  <img alt="GitHub followers" src="https://img.shields.io/github/followers/Achraf-ElAmrani?style=flat&logo=github"> <img alt="Static Badge" src="https://img.shields.io/badge/French-8A2BE2"> <img alt="Static Badge" src="https://img.shields.io/badge/Projet-8A2BE2?color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=cplusplus"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=easyeda&color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=arduino&color=lightblue">
 
-
-
-
 # Projet en cours de réalisation par : 
 - El Amrani Achraf
 - étudiant a l' INRACI
 - 6 eme technique de qualification 
 ## Video
 ## Table de matie des matières
+- [Introduction](#Introduction)
+- [Liste des composants](#Liste-des-composants)
+- [Les caractéristiques](#Les-caractéristiques)
+- [Schéma de principe](#Schéma-de-principe)
+- [le PCB](#le-PCB)
+- [Schéma de principe](#Le-schéma-bloc)
+- [Ordinogramme](#Ordinogramme)
+- [3D](#3D)
+- [Bibliothèques nécessaires](#Bibliothèques-nécessaires)
+- [Source](#Source)
 ## Introduction
 
 Passionné par les jeux vidéo et la mécanique, j’ai décidé de consacrer mon projet de fin d’études à la création d’une console de jeux portable. L’inspiration m’est venue après avoir découvert le film Tetris, qui met en lumière le célèbre jeu ainsi que la mythique Game Boy.
