@@ -55,7 +55,7 @@ Ce projet est bien plus qu’un simple exercice technique : il représente l’a
 - x3 diode
 
 ## Les caractéristiques
-Feather M0 express : 
+**Feather M0 express :** 
 
 - Microcontrôleur : ATSAMD21G18 (32 bits)
 
@@ -77,7 +77,7 @@ Feather M0 express :
 
 - Compatible avec : Arduino IDE
 
-MCP23008 :
+**MCP23008 :**
 
 - 8 broches d'E/S configurables individuellement en entrée ou sortie
 
@@ -91,7 +91,7 @@ MCP23008 :
 
 - Courant max par broche : environ 25mA (selon la tension)
 
-MCP1826 :
+**MCP1826 :**
 
 - Tension d’entrée (Vin) : 2.1V à 13.2V
 
@@ -103,7 +103,7 @@ MCP1826 :
 
 - Faible consommation de courant : 120 µA
 
-MAX98357A : 
+**MAX98357A :**
 
 - Entrée audio numérique : I²S (compatible standard 16, 24 et 32 bits)
 
@@ -119,7 +119,7 @@ MAX98357A :
 
 - Fonctionne avec l'horloge interne du microcontrôleur
 
-MCP73831T-2ACI/OT : 
+**MCP73831T-2ACI/OT :**
 
 - Tension d’entrée (Vin) : 3.75V à 6V
 
@@ -131,13 +131,13 @@ MCP73831T-2ACI/OT :
 
 - Indicateur LED possible : indique l’état de charge (via la broche STAT)
 
-Joystick 2765 : 
+**Joystick 2765 :**
 
 - Type : Joystick analogique auto-centrant à 2 axes.​
 
 - Potentiomètres intégrés : Deux potentiomètres de 10 kΩ chacun, un pour l'axe vertical (haut/bas) et un pour l'axe horizontal (gauche/droite).
 
-ILI9341 TFT 2.8" : 
+**ILI9341 TFT 2.8" :**
 
 - Taille : 2.8 pouces
 
