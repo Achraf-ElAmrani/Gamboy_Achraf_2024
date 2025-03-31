@@ -181,5 +181,8 @@ Ce projet est bien plus qu’un simple exercice technique : il représente l’a
 ![Capture d'écran 2025-02-04 194103](https://github.com/user-attachments/assets/9dff16ac-fc47-44fa-903b-3567f36d163e)
 ![Capture d'écran 2025-02-04 194122](https://github.com/user-attachments/assets/b390fd98-e645-4a37-a916-45a664a20343)
 ## Bibliothèques nécessaires
+- **Adafruit GFX Library :** https://github.com/adafruit/Adafruit-GFX-Library
+- **Adafruit ILI9341 :** https://github.com/adafruit/Adafruit_ILI9341
+- **Adafruit MCP23008 library :** https://github.com/adafruit/Adafruit-MCP23008-library
 ## Source 
 
