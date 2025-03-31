@@ -152,9 +152,25 @@ Ce projet est bien plus qu’un simple exercice technique : il représente l’a
 - Fréquence SPI : Jusqu’à 40MHz, permettant un affichage fluide
 
 - Rétroéclairage LED intégré
+  
+**mechanique :**
+
+- Poid :
+
+- Taille :
+
+- Materiaux :
+
 
 ## Schéma de principe
+![Schematic_gameboy_final_2025-03-31](https://github.com/user-attachments/assets/34e4be20-1f5d-4c5e-beee-5dde37f4b80f)
+
 ## le PCB
+![image](https://github.com/user-attachments/assets/ff6a07bb-495c-4cd1-9c17-486cee9259d6)
+![PCB_PCB_gameboy_final_2025-03-31_rouge_bleu](https://github.com/user-attachments/assets/aa09dab5-3835-4bec-b8a7-b3e5cea5c03d)
+![PCB_PCB_gameboy_final_2025-03-31](https://github.com/user-attachments/assets/48dd8dd1-aab3-45cb-8d5d-ffff849005d8)
+![PCB_PCB_gameboy_final_2025-03-31_bleu](https://github.com/user-attachments/assets/871a825a-0fbd-48c3-8dc2-fe9252e4e250)
+
 ## Le schéma bloc
 ![schema bloque  drawio (2)](https://github.com/user-attachments/assets/83ecc262-afdc-4523-affc-aa4a836d04b1)
 
