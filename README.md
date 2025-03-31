@@ -3,9 +3,10 @@
  <img alt="GitHub followers" src="https://img.shields.io/github/followers/Achraf-ElAmrani?style=flat&logo=github"> <img alt="Static Badge" src="https://img.shields.io/badge/French-8A2BE2"> <img alt="Static Badge" src="https://img.shields.io/badge/Projet-8A2BE2?color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=cplusplus"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=easyeda&color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=arduino&color=lightblue">
 
 # Projet en cours de réalisation par : 
-- El Amrani Achraf
-- étudiant a l' INRACI
-- 6 eme technique de qualification 
+- **Nom,Prénom :** El Amrani Achraf
+- **Ecole :** étudiant a l' INRACI
+- **Annee :** 6 eme technique de qualification
+- **Promotteur :** Mr Feliz Kapita 
 ## Video
 ## Table de matie des matières
 - [Introduction](#Introduction)
