@@ -176,6 +176,8 @@ Ce projet est bien plus qu’un simple exercice technique : il représente l’a
 ![schema bloque  drawio (2)](https://github.com/user-attachments/assets/83ecc262-afdc-4523-affc-aa4a836d04b1)
 
 ## Ordinogramme
+![Diagramme sans nom drawio](https://github.com/user-attachments/assets/3e8a5729-4d37-4346-be31-3ea31c8e87cd)
+
 ## 3D 
 ![Capture d'écran 2025-02-04 203529](https://github.com/user-attachments/assets/c2d2cccd-72f5-401e-8e14-7d100f6c450f)
 ![Capture d'écran 2025-02-04 194054](https://github.com/user-attachments/assets/2d69b65a-8281-49bf-bdec-56c905a3ff89)
