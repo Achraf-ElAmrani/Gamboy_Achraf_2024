@@ -21,11 +21,11 @@
 - [Source](#Source)
 ## Introduction
 
-Passionné par les jeux vidéo et la mécanique, j’ai décidé de consacrer mon projet de fin d’études à la création d’une console de jeux portable. L’inspiration m’est venue après avoir découvert le film Tetris, qui met en lumière le célèbre jeu ainsi que la mythique Game Boy.
+Passionné par les jeux vidéo, j’ai décidé de consacrer mon projet de fin d’études à la création d’une console de jeux portable. L’inspiration m’est venue après avoir découvert le film Tetris, qui met en lumière le célèbre jeu ainsi que la mythique Game Boy.
 
 Mon objectif est de concevoir un appareil capable d’exécuter plusieurs jeux, avec Tetris comme titre principal. L’expérience de jeu sera optimisée grâce à un système de contrôle intuitif, combinant joystick et boutons physiques.
 
-Ce projet est bien plus qu’un simple exercice technique : il représente l’aboutissement de mon parcours académique et l’opportunité d’appliquer concrètement les compétences que j’ai développées au fil des années. Il reflète mon engagement dans le domaine du jeu vidéo ainsi que mon envie de relever des défis techniques stimulants.
+Ce projet est bien plus qu’un simple exercice technique : il représente l’aboutissement de mon parcours académique et l’opportunité d’appliquer concrètement les compétences que j’ai développées au fil des années. Il reflète mon engagement dans le domaine de l'électtronique et du jeu vidéo ainsi que mon envie de relever des défis techniques stimulants.
 
 ## Liste des composants
 
