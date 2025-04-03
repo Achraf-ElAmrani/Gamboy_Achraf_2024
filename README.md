@@ -2,15 +2,23 @@
 # Console de jeux portable
  <img alt="GitHub followers" src="https://img.shields.io/github/followers/Achraf-ElAmrani?style=flat&logo=github"> <img alt="Static Badge" src="https://img.shields.io/badge/French-8A2BE2"> <img alt="Static Badge" src="https://img.shields.io/badge/Projet-8A2BE2?color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=cplusplus"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=easyeda&color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=arduino&color=lightblue">
 
-
-
-
 # Projet en cours de réalisation par : 
-- El Amrani Achraf
-- étudiant a l' INRACI
-- 6 eme technique de qualification 
+- **Nom,Prénom :** El Amrani Achraf
+- **Ecole :** étudiant a l' INRACI
+- **Annee :** 6 eme technique de qualification
+- **Promotteur :** Mr Feliz Kapita 
 ## Video
 ## Table de matie des matières
+- [Introduction](#Introduction)
+- [Liste des composants](#Liste-des-composants)
+- [Les caractéristiques](#Les-caractéristiques)
+- [Schéma de principe](#Schéma-de-principe)
+- [le PCB](#le-PCB)
+- [Schéma de principe](#Le-schéma-bloc)
+- [Ordinogramme](#Ordinogramme)
+- [3D](#3D)
+- [Bibliothèques nécessaires](#Bibliothèques-nécessaires)
+- [Source](#Source)
 ## Introduction
 
 Passionné par les jeux vidéo et la mécanique, j’ai décidé de consacrer mon projet de fin d’études à la création d’une console de jeux portable. L’inspiration m’est venue après avoir découvert le film Tetris, qui met en lumière le célèbre jeu ainsi que la mythique Game Boy.
@@ -48,7 +56,7 @@ Ce projet est bien plus qu’un simple exercice technique : il représente l’a
 - x3 diode
 
 ## Les caractéristiques
-Feather M0 express : 
+**Feather M0 express :** 
 
 - Microcontrôleur : ATSAMD21G18 (32 bits)
 
@@ -70,7 +78,7 @@ Feather M0 express :
 
 - Compatible avec : Arduino IDE
 
-MCP23008 :
+**MCP23008 :**
 
 - 8 broches d'E/S configurables individuellement en entrée ou sortie
 
@@ -84,7 +92,7 @@ MCP23008 :
 
 - Courant max par broche : environ 25mA (selon la tension)
 
-MCP1826 :
+**MCP1826 :**
 
 - Tension d’entrée (Vin) : 2.1V à 13.2V
 
@@ -96,7 +104,7 @@ MCP1826 :
 
 - Faible consommation de courant : 120 µA
 
-MAX98357A : 
+**MAX98357A :**
 
 - Entrée audio numérique : I²S (compatible standard 16, 24 et 32 bits)
 
@@ -112,7 +120,7 @@ MAX98357A :
 
 - Fonctionne avec l'horloge interne du microcontrôleur
 
-MCP73831T-2ACI/OT : 
+**MCP73831T-2ACI/OT :**
 
 - Tension d’entrée (Vin) : 3.75V à 6V
 
@@ -124,13 +132,13 @@ MCP73831T-2ACI/OT :
 
 - Indicateur LED possible : indique l’état de charge (via la broche STAT)
 
-Joystick 2765 : 
+**Joystick 2765 :**
 
 - Type : Joystick analogique auto-centrant à 2 axes.​
 
 - Potentiomètres intégrés : Deux potentiomètres de 10 kΩ chacun, un pour l'axe vertical (haut/bas) et un pour l'axe horizontal (gauche/droite).
 
-ILI9341 TFT 2.8" : 
+**ILI9341 TFT 2.8" :**
 
 - Taille : 2.8 pouces
 
@@ -145,18 +153,39 @@ ILI9341 TFT 2.8" :
 - Fréquence SPI : Jusqu’à 40MHz, permettant un affichage fluide
 
 - Rétroéclairage LED intégré
+  
+**mechanique :**
+
+- Poid :
+
+- Taille :
+
+- Materiaux :
+
 
 ## Schéma de principe
+![Schematic_gameboy_final_2025-03-31](https://github.com/user-attachments/assets/34e4be20-1f5d-4c5e-beee-5dde37f4b80f)
+
 ## le PCB
+![image](https://github.com/user-attachments/assets/ff6a07bb-495c-4cd1-9c17-486cee9259d6)
+![PCB_PCB_gameboy_final_2025-03-31_rouge_bleu](https://github.com/user-attachments/assets/aa09dab5-3835-4bec-b8a7-b3e5cea5c03d)
+![PCB_PCB_gameboy_final_2025-03-31](https://github.com/user-attachments/assets/48dd8dd1-aab3-45cb-8d5d-ffff849005d8)
+![PCB_PCB_gameboy_final_2025-03-31_bleu](https://github.com/user-attachments/assets/871a825a-0fbd-48c3-8dc2-fe9252e4e250)
+
 ## Le schéma bloc
 ![schema bloque  drawio (2)](https://github.com/user-attachments/assets/83ecc262-afdc-4523-affc-aa4a836d04b1)
 
 ## Ordinogramme
+![Diagramme sans nom drawio](https://github.com/user-attachments/assets/3e8a5729-4d37-4346-be31-3ea31c8e87cd)
+
 ## 3D 
 ![Capture d'écran 2025-02-04 203529](https://github.com/user-attachments/assets/c2d2cccd-72f5-401e-8e14-7d100f6c450f)
 ![Capture d'écran 2025-02-04 194054](https://github.com/user-attachments/assets/2d69b65a-8281-49bf-bdec-56c905a3ff89)
 ![Capture d'écran 2025-02-04 194103](https://github.com/user-attachments/assets/9dff16ac-fc47-44fa-903b-3567f36d163e)
 ![Capture d'écran 2025-02-04 194122](https://github.com/user-attachments/assets/b390fd98-e645-4a37-a916-45a664a20343)
 ## Bibliothèques nécessaires
+- **Adafruit GFX Library :** https://github.com/adafruit/Adafruit-GFX-Library
+- **Adafruit ILI9341 :** https://github.com/adafruit/Adafruit_ILI9341
+- **Adafruit MCP23008 library :** https://github.com/adafruit/Adafruit-MCP23008-library
 ## Source 
 
