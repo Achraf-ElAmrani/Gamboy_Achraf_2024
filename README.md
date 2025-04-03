@@ -6,7 +6,7 @@
 - **Nom,Prénom :** El Amrani Achraf
 - **Ecole :** étudiant a l' INRACI
 - **Annee :** 6 eme technique de qualification
-- **Promotteur :** Mr Feliz Kapita 
+- **Promoteur :** Mr Feliz Kapita 
 ## Video
 ## Table de matie des matières
 - [Introduction](#Introduction)
