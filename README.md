@@ -8,7 +8,7 @@
 - **Annee :** 6 eme technique de qualification
 - **Promoteur :** Mr Feliz Kapita 
 ## Video
-## Table de matie des matières
+## Sommaire
 - [Introduction](#Introduction)
 - [Liste des composants](#Liste-des-composants)
 - [Les caractéristiques](#Les-caractéristiques)
