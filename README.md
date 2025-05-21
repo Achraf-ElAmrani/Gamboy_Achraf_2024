@@ -14,7 +14,7 @@
 - [Les caractéristiques](#Les-caractéristiques)
 - [Schéma de principe](#Schéma-de-principe)
 - [le PCB](#le-PCB)
-- [Schéma de principe](#Le-schéma-bloc)
+- [Schéma de bloc](#Le-schéma-bloc)
 - [Ordinogramme](#Ordinogramme)
 - [3D](#3D)
 - [Bibliothèques nécessaires](#Bibliothèques-nécessaires)
