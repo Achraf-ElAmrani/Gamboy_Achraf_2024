@@ -3,13 +3,13 @@
 Adafruit_ILI9341 tft(TFT_CS, TFT_DC, TFT_RST);
 // Position initiale du point
 int pointX = 120, pointY = 160;
-int Radius = 5, threshold = 10, speed = 7;  // Si la variation est inférieure à threshold = zone morte (50), elle est ignorée
-unsigned long Time_ms = 0;
+int Radius = 5, threshold = 10, speed = 7;  // Si la variation est inférieure à threshold = zone morte (10), elle est ignorée
+unsigned long Time_ms = 0;//unsigned long peut contenir des valeurs de 0 à 4 294 967 295
 
 byte Pos_X = 32;
 bool difficulte = 0;
 bool tire = 0;
-byte position = rand() % 60;
+byte position = rand() % 60; // division de rand() par 60 = nombre aléatoire entre 0 et 59.
 int score = 0;
 
 byte Mode = 0;
@@ -17,7 +17,7 @@ byte MODE_POINT = 1;
 byte MODE_INVADERS = 2;
 Adafruit_MCP23008 mcp;
 
-void drawPoint(int x, int y, uint16_t color) {
+void drawPoint(int x, int y, uint16_t color) { //couleur du point, codée sur 16 bits
   tft.fillCircle(x, y, Radius, color);
 }
 
@@ -141,21 +141,32 @@ void aile(uint16_t color)
   tft.drawLine(aile_d_pixel3, 4, aile_d_pixel3, 10, color);
   meme_aile = Pos_X;
 }
-void cible_touche(void){
-  tft.fillScreen(ILI9341_BLACK);
-  tft.invertDisplay(true);
-  delay(500);
-  tft.invertDisplay(false);
+void cible_touche(void) {
+  // Petit flash visuel
+  for (int i = 0; i < 2; i++) {
+    tft.invertDisplay(true);
+    delay(100);
+    tft.invertDisplay(false);
+    delay(100);
+  }
+
+  // Affiche "score +1!"
   tft.setRotation(3);
   tft.setTextColor(ILI9341_YELLOW);
   tft.setTextSize(2);
   tft.setCursor(100, 120);
-  tft.print("score + 1!");
-  tft.setRotation(3);
-  delay(1000);
+  tft.print("score +1!");
+
+  delay(800); // Laisse le message visible brièvement
+
+  // Efface proprement la zone du texte avec fillRect
+  tft.fillRect(100, 120, 120, 20, ILI9341_BLACK); 
+  // (ajuste la largeur/hauteur si nécessaire)
 }
+
+
 void score_affichage(void) {
-  static int ancien_score = -1;
+  static int ancien_score;
 
   tft.setRotation(3);
   tft.setCursor(0, 0);
@@ -167,7 +178,7 @@ void score_affichage(void) {
     tft.print(ancien_score);
     
     tft.setCursor(0, 0); // Remet le curseur au début pour le nouveau score
-    tft.setTextColor(ILI9341_WHITE); // Ou une autre couleur de fond si nécessaire
+    tft.setTextColor(ILI9341_WHITE); //couleur de fond 
     tft.print("score:");
     tft.print(score);
 
@@ -178,7 +189,7 @@ void score_affichage(void) {
 }
 
 void cible_affichage(void) {
-  static int ancienne_position; // Valeur initiale pour forcer le premier affichage
+  static int ancienne_position; // Valeur pour forcer le premier affichage
 
   // Si la position a changé, efface l'ancienne cible
   if (ancienne_position != position) {
@@ -193,7 +204,7 @@ void cible_affichage(void) {
 }
 
 void tir_affichage(void) {
-  static int meme_tire; // Valeur initiale impossible pour forcer le premier affichage
+  static int meme_tire; //initialisée meme tire une seule fois, puis garde en mémoire tant que le programme tourne.
 
   // Si la position du tir a changé, efface l'ancien tir
   if (meme_tire != Pos_X) {
