@@ -14,7 +14,7 @@
 - [Les caractéristiques](#Les-caractéristiques)
 - [Schéma de principe](#Schéma-de-principe)
 - [le PCB](#le-PCB)
-- [Schéma de principe](#Le-schéma-bloc)
+- [Schéma de bloc](#Le-schéma-bloc)
 - [Ordinogramme](#Ordinogramme)
 - [3D](#3D)
 - [Bibliothèques nécessaires](#Bibliothèques-nécessaires)
@@ -25,7 +25,7 @@ Passionné par les jeux vidéo, j’ai décidé de consacrer mon projet de fin d
 
 Mon objectif est de concevoir un appareil capable d’exécuter plusieurs jeux, avec Tetris comme titre principal. L’expérience de jeu sera optimisée grâce à un système de contrôle intuitif, combinant joystick et boutons physiques.
 
-Ce projet est bien plus qu’un simple exercice technique : il représente l’aboutissement de mon parcours académique et l’opportunité d’appliquer concrètement les compétences que j’ai développées au fil des années. Il reflète mon engagement dans le domaine de l'électtronique et du jeu vidéo ainsi que mon envie de relever des défis techniques stimulants.
+Ce projet est bien plus qu’un simple exercice technique : il représente l’aboutissement de mon parcours académique et l’opportunité d’appliquer concrètement les compétences que j’ai développées au fil des années. Il reflète mon engagement dans le domaine de l'électronique et du jeu vidéo ainsi que mon envie de relever des défis techniques stimulants.
 
 ## Liste des composants
 
