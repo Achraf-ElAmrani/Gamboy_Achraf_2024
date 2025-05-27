@@ -188,4 +188,16 @@ Ce projet est bien plus qu’un simple exercice technique : il représente l’a
 - **Adafruit ILI9341 :** https://github.com/adafruit/Adafruit_ILI9341
 - **Adafruit MCP23008 library :** https://github.com/adafruit/Adafruit-MCP23008-library
 ## Source 
+- **Adafruit MAX98357 I2S Class-D Mono Amp (25/05/2025) :** Downloads | Adafruit MAX98357 I2S Class-D Mono Amp | Adafruit Learning System
+- **I2S (25/05/2025) :** I2S — Wikipédia
+- **MAX98357A Class D'Amplifier (25/05/2025) :** https://youtu.be/At8PDQ3g7FQ
+- **Max98357 - What is I2S ?** https://www.az-delivery.de/en/blogs/azdelivery-blog-fur-arduino-und-raspberrypi/max98357-was-ist-eigentlich-i2s?utm_source=chatgpt.com 
+## Datasheet
+- **ADAFRUIT USB C BREAKOUT BOARD :** [https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/320/4090_Web.pdf](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/320/4090_Web.pdf) 
+- **FEATHER 32U4 BASIC PROTO ATMEGA :** [ https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather-32u4-basic-proto.pdf](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather-32u4-basic-proto.pdf)
+- **MCP73831/2 :** [https://ww1.microchip.com/downloads/en/DeviceDoc/MCP73831-Family-Data-SheetDS20001984H.pdf ](https://ww1.microchip.com/downloads/en/DeviceDoc/MCP73831-Family-Data-Sheet-DS20001984H.pdf)
+- **MINI 2-AXIS ANALOG THUMBSTICK :** https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/813/2765_Web.pdf
+- **MCP1826 :** https://ww1.microchip.com/downloads/en/DeviceDoc/22057B.pdf
+- **MAX98357A :** https://cdn-shop.adafruit.com/product-files/3006/MAX98357A-MAX98357B.pdf
+- **MCP23008 :** https://ww1.microchip.com/downloads/en/DeviceDoc/MCP23008-MCP23S08-Data-Sheet-20001919F.pdf
 
