@@ -16,7 +16,7 @@
  #define x A0  // Axe X du joystick
  #define y A2  // Axe Y du joystick
 
- #define SAMPLERATE_HZ 44100  // Définit la fréquence d'échantillonnage du son à 44 100 Hz.
+ #define SAMPLERATE_HZ 44100 // Définit la fréquence d'échantillonnage du son à 44 100 Hz.
                              // C’est le nombre d’échantillons audio par seconde. Plus ce chiffre est élevé, meilleure est la qualité du son.
                              // 44 100 Hz correspond à la qualité CD audio.
 
@@ -24,7 +24,7 @@
                              // La valeur ((1<<29)-1) correspond à 2³⁰ - 1, soit 1 073 741 823.
                              // Tu peux la réduire si le son est trop fort ou sature. Par exemple : 1<<27 est plus doux.
 
- #define WAV_SIZE      256    // Taille du tableau qui contient une période de l'onde audio.
+ #define WAV_SIZE      256   // Taille du tableau qui contient une période de l'onde audio.
                              // Plus la taille est grande, plus l’onde est précise.
                              // 256 points suffisent pour générer des ondes simples.
  
@@ -64,7 +64,6 @@
  extern Adafruit_ILI9341 tft;
 
  extern byte Pos_X;
- extern bool difficulte;
  extern bool tire;
  extern byte position;
  extern int score;
@@ -73,7 +72,6 @@
  extern byte MODE_POINT;
  extern byte MODE_INVADERS;
  extern byte bibliotheque_de_son;
- extern unsigned long Time_ms;
  
  void bouton_qui_bande(void);
  void drawPoint(int, int, uint16_t);
@@ -86,7 +84,7 @@
  void cible_touche(void);
  void score_affichage(void);
  void cible_affichage(void);
- void tir_affichage(void);
+ void tire_affichage(void);
  void triangleinv(void);
  void generateSine(int32_t amplitude, int32_t* buffer, uint16_t length);
  void generateSawtooth(int32_t amplitude, int32_t* buffer, uint16_t length);

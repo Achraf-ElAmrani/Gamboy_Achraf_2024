@@ -3,86 +3,139 @@
 // 6TQA-INRACI
 // Feather M0 Express - 8-bit Expander, Ecran ILI9341 - Joystick - Ampli classe D MAX98357A
 // 08.03.2025
-//probleme 1.tire pas rafraichi completement 2.Triangle qui depasse la limite haute de l'écran
 #include "console.h"  // Inclusion du fichier contenant les fonctions du projet
 
 void setup() {
-  Serial.begin(9600);  // Initialisation de la communication série à 9600 bauds
-  InitialisationEcran();  // Initialise l'écran ILI9341
-  InitialisationButton(); // Initialise les boutons via l'extendeur MCP
-  Menu();  // Affiche le menu de sélection des modes
-  son();
+  Serial.begin(9600);  // Démarre la communication série à 9600 bauds pour le débogage
+  InitialisationEcran();  // Initialise l'écran ILI9341 (couleur, rotation, etc.)
+  InitialisationButton();  // Configure les boutons via l'extendeur I2C MCP23008
+  Menu();  // Affiche le menu principal de sélection des modes
+  son();  // Initialise le module audio 
 
-  // Attente de la sélection du mode via les boutons
-  while (Mode == 0) { //tant que Mode vaut 0
-      if (mcp.digitalRead(BUTTON1) == LOW) Mode = MODE_POINT;     // Si bouton 1 pressé, mode Point
-      if (mcp.digitalRead(BUTTON2) == LOW) Mode = MODE_INVADERS;  // Si bouton 2 pressé, mode Invaders
-      if (mcp.digitalRead(BUTTON3) == LOW) Mode = bibliotheque_de_son;  // Si bouton 3 pressé, mode bibliotheque_de_son
+  // === Sélection du mode initial via les boutons ===
+  while (Mode == 0) {  // Tant qu'aucun mode n'a été sélectionné (Mode = 0)
+    if (mcp.digitalRead(BUTTON1) == LOW) Mode = MODE_POINT;  // Bouton 1 → Mode POINT
+    if (mcp.digitalRead(BUTTON2) == LOW) Mode = MODE_INVADERS;  // Bouton 2 → Mode INVADERS
+    if (mcp.digitalRead(BUTTON3) == LOW) Mode = bibliotheque_de_son;  // Bouton 3 → Bibliothèque de son
   }
 
-  tft.fillScreen(ILI9341_BLACK);  // Efface l'écran
-
-  Time_ms = millis();  // Enregistre le temps initial
-
-  // Affiche un message selon le mode choisi
+  tft.fillScreen(ILI9341_BLACK);  // Efface l'écran avant d'entrer dans un mode
+  // === Affiche le mode choisi ===
   if (Mode == MODE_POINT) {
-      tft.setCursor(50, 100);  // Positionne le curseur
+    tft.setCursor(50, 100);
   } else if (Mode == MODE_INVADERS) {
-      tft.setCursor(50, 100);
-      tft.println("Mode: Invaders");  // Affiche le nom du mode
+    tft.setCursor(50, 100);
+    tft.println("Mode: Invaders");
   } else if (Mode == bibliotheque_de_son) {
-      tft.setCursor(50, 100);
-      tft.println("Mode: Librairie de son");  // Affiche le nom du mode
+    tft.setCursor(50, 100);
+    tft.println("Mode: bibliotheque de son");
   }
-  tft.fillScreen(ILI9341_BLACK);
+
+  tft.fillScreen(ILI9341_BLACK);  // Nettoie l’écran pour le mode choisi
 }
 
 void loop() {
-  // --- Mode POINT ---
-  while (Mode == MODE_POINT) //bloquant mais la variable mode n'est jamais réaffecter
-  {
-      MettreAJourPosition();  // Met à jour la position du joystick ou du point
-      bouton_qui_bande();     // Gère l'entrée du bouton
-  
-  } 
 
-// --- Mode INVADERS ---
-  while (Mode == MODE_INVADERS) 
-  {
-    // Détermine les points verticaux du vaisseau (triangle)
-    byte Pos_X_droit = Pos_X - 2;  byte Pos_X_gauche = Pos_X + 2;
-
-    int deplacement = Deplacement(analogRead(y));
-    Pos_X = constrain(Pos_X + deplacement, 0, 1023); // constrain = chatgpt : constrain(valeur, minimum, maximum)
-
-    // Si le bouton de tir est pressé
-    if (!mcp.digitalRead(BUTTON3)) {
-      tire = 1;  // Active le tir
-
-      // Vérifie si la cible est touchée
-      if (Pos_X == position || Pos_X == position + 1 || Pos_X == position - 1) { //tolérance de ±1
-        cible_touche();  // Fonction appelée quand la cible est touchée
-        score++;         // Incrémente le score
-
-        position = rand() % 64; // Change la position de la cible aléatoirement
-        if (score >= 5) {
-          position++;  // difficulté supplémentaire à partir d’un score de 5
-        }
-      } else {
-      score = score - 1; // tire rater = -1 de score
-      delay(100);
-      }
-    } else {
-      tire = 0;  // Pas de tir si le bouton n'est pas pressé
+  // === MENU PRINCIPAL ===
+  // Si on revient au menu (Mode = 0), on réaffiche le menu et on attend une nouvelle sélection
+  while (Mode == 0) {
+    if (mcp.digitalRead(BUTTON1) == LOW) {
+      Mode = MODE_POINT;
+      tft.fillScreen(ILI9341_BLACK);
     }
 
-    tir_affichage(); score_affichage();  cible_affichage();  triangleinv(); tetris_them();     
+    if (mcp.digitalRead(BUTTON2) == LOW) {
+      Mode = MODE_INVADERS;
+      tft.fillScreen(ILI9341_BLACK);
+    }
+
+    if (mcp.digitalRead(BUTTON3) == LOW) {
+      Mode = bibliotheque_de_son;
+      tft.fillScreen(ILI9341_BLACK);
+    }
   }
 
-  
-  while (Mode == bibliotheque_de_son) //bloquant mais la variable mode n'est jamais réaffecter
-  {
-      tetris_them();
-  } 
+  // === MODE POINT ===
+  if (Mode == MODE_POINT) {
+    while (Mode == MODE_POINT) {
+      // Si bouton 4 appuyé → retour menu
+      if (mcp.digitalRead(BUTTON4) == LOW) {
+        Mode = 0;
+        Menu();
+        while (mcp.digitalRead(BUTTON4) == LOW) ;  // attend relâchement bouton
+        break;
+      }
 
+      MettreAJourPosition();  // Lit le joystick et déplace le point blanc
+      bouton_qui_bande();  // Permet de changer le rayon du point avec les boutons
+    }
+  }
+
+  // === MODE INVADERS ===
+  if (Mode == MODE_INVADERS) {
+    while (Mode == MODE_INVADERS) {
+      // Retour menu avec bouton 4
+      if (mcp.digitalRead(BUTTON4) == LOW) {
+        Mode = 0;
+        Menu();
+        while (mcp.digitalRead(BUTTON4) == LOW);
+        break;
+      }
+
+      // Lecture du joystick vertical pour déplacer le vaisseau
+      byte Pos_X_droit = Pos_X - 2;
+      byte Pos_X_gauche = Pos_X + 2;
+      int deplacement = Deplacement(analogRead(y));  // Retourne une valeur entre -speed et +speed
+      Pos_X = constrain(Pos_X + deplacement, 0, 1023);  // Limite entre 0 et 1023
+      // Si bouton de tir appuyé
+      if (!mcp.digitalRead(BUTTON3)) {
+        tire = 1;
+        int tol = 5;  // Tolérance de 5 pixels autour de la cible
+        if (abs(Pos_X - position) <= tol) {
+          cible_touche();  // Animation et affichage du "score +1"
+          score++;
+          position = rand() % 64;
+          if (score >= 5) position++;  // difficulté : décalage de la cible
+        } else {
+          score = score - 1;  // Tir manqué → -1 point
+          delay(150);  // Petite pause pour éviter le spam
+        }
+
+      } else {
+        tire = 0;  // pas de tir
+      }
+
+      // Affichages graphiques
+      tire_affichage();  // Affiche ou efface la ligne de tir
+      score_affichage();  // Affiche le score dans le coin
+      cible_affichage();  // Dessine la cible
+      triangleinv();  // Affiche le vaisseau en triangle
+    }
+  }
+
+  // === MODE BIBLIOTHÈQUE DE SON ===
+  if (Mode == bibliotheque_de_son) {
+    while (Mode == bibliotheque_de_son) {
+      // Affichage d'aide pour l'utilisateur
+      tft.setCursor(10, 100);
+      tft.setTextColor(ILI9341_GREEN);
+      tft.setTextSize(2);
+      tft.print(" Bouton 1 = tetris_them");
+
+      while (mcp.digitalRead(BUTTON1) == LOW) ;  // attend relâchement bouton pour éviter spam
+      // Retour menu
+      if (mcp.digitalRead(BUTTON4) == LOW) {
+        Mode = 0;
+        Menu();
+        while (mcp.digitalRead(BUTTON4) == LOW);
+        break;
+      }
+
+      // Si bouton 1 appuyé → joue le thème Tetris
+      if (mcp.digitalRead(BUTTON1) == LOW) {
+        tetris_them();  // Joue la mélodie via I2S
+        while (mcp.digitalRead(BUTTON1) == LOW);  // attend relâchement
+      }
+    }
+  }
 }

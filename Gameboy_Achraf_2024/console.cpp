@@ -5,10 +5,8 @@ Adafruit_ILI9341 tft(TFT_CS, TFT_DC, TFT_RST);
 // Position initiale du point
 int pointX = 120, pointY = 160;
 int Radius = 5, threshold = 10, speed = 7;  // Si la variation est inférieure à threshold = zone morte (10), elle est ignorée
-unsigned long Time_ms = 0; //unsigned long peut contenir des valeurs de 0 à 4 294 967 295
 
 byte Pos_X = 32;
-bool difficulte = 0;
 bool tire = 0;
 byte position = rand() % 60; // division de rand() par 60 = nombre aléatoire entre 0 et 59.
 int score = 0;
@@ -43,18 +41,21 @@ void drawPoint(int x, int y, uint16_t color) { //couleur du point, codée sur 16
 }
 
 void Menu(void) {
-  tft.fillScreen(ILI9341_BLACK);
-  tft.setTextColor(ILI9341_WHITE);
-  tft.setTextSize(2);
-  tft.setCursor(40, 50);
-  tft.println("Select Mode:");
-  tft.setCursor(60, 100);
-  tft.println("1. Point");
-  tft.setCursor(60, 140);
-  tft.println("2. Invaders");
-  tft.setCursor(60, 180);
-  tft.println("3. Librairie_de_son");
+
+    tft.setRotation(3);             // Remet l’écran dans le bon sens
+    tft.fillScreen(ILI9341_BLACK);
+    tft.setTextColor(ILI9341_WHITE);
+    tft.setTextSize(2);
+    tft.setCursor(40, 50);
+    tft.println("Select Mode:");
+    tft.setCursor(60, 100);
+    tft.println("1. Point");
+    tft.setCursor(60, 140);
+    tft.println("2. Invaders");
+    tft.setCursor(60, 180);
+    tft.println("3. Librairie_de_son");
 }
+ 
 
 void InitialisationButton(void) {
   mcp.begin();
@@ -70,31 +71,26 @@ void InitialisationEcran(void) {
 }
 
 void MettreAJourPosition(void) {
-  int oldX = pointX, oldY = pointY;
-  if (millis() >= Time_ms + 10) {
-    int xValue = analogRead(x), yValue = analogRead(y);  // Lecture des valeurs du joystick
-    int oldX = pointX, oldY = pointY;                    // Sauvegarde de l'ancienne position
-
-    // Vérification des mouvements du joystick et mise à jour de la position
-    if (abs(xValue - 512) > threshold) pointX -= map(xValue, 0, 1023, -speed, speed);//chatgpt
-    if (abs(yValue - 512) > threshold) pointY -= map(yValue, 0, 1023, -speed, speed);//chatgpt
-
-    // Contraindre la position du point à l'intérieur des limites de l'écran
-    pointX = constrain(pointX, Radius, tft.width() - Radius);//chatgpt
-    pointY = constrain(pointY, Radius, tft.height() - Radius);//chatgpt
-
-    drawPoint(oldX, oldY, ILI9341_BLACK);      // Effacer l'ancien point
-    drawPoint(pointX, pointY, ILI9341_WHITE);  // Dessiner le nouveau point
-
-    Time_ms = millis();
-  }
-  // Vérification si un bouton est pressé pour remettre le point au centre
-  if (mcp.digitalRead(BUTTON1) == LOW) {
-
-    pointX = tft.width() / 2;              // Réinitialiser la position X au centre
-    pointY = tft.height() / 2;             // Réinitialiser la position Y au centre
-    drawPoint(oldX, oldY, ILI9341_BLACK);  // Effacer l'ancien point
-  }
+    int oldX = pointX;  int oldY = pointY;  int xVal = analogRead(x);  int yVal = analogRead(y);
+    // zone morte : ne bouge que si l'écart est assez grand
+    if (abs(xVal - 512) > threshold) {
+      pointX -= map(xVal, 0, 1023, -speed, speed);
+    }
+    if (abs(yVal - 512) > threshold) {
+      pointY -= map(yVal, 0, 1023, -speed, speed);
+    }
+    // Limite aux bords de l'écran
+    pointX = constrain(pointX, Radius, tft.width() - Radius);
+    pointY = constrain(pointY, Radius, tft.height() - Radius);
+    drawPoint(oldX, oldY, ILI9341_BLACK);    // efface ancien point
+    drawPoint(pointX, pointY, ILI9341_WHITE); // dessine nouveau
+    // Réinitialise la position si bouton 1 pressé
+    if (mcp.digitalRead(BUTTON1) == LOW) {
+      drawPoint(pointX, pointY, ILI9341_BLACK);
+      pointX = tft.width() / 2;
+      pointY = tft.height() / 2;
+      drawPoint(pointX, pointY, ILI9341_WHITE);
+    }
 }
 void bouton_qui_bande(void)
 {
@@ -179,21 +175,14 @@ void cible_affichage(void) {
   ancienne_position = position;
 }
 
-void tir_affichage(void) {
-  static int meme_tire; //initialisée meme tire une seule fois, puis garde en mémoire tant que le programme tourne.
-  unsigned long times = millis();
-  // Si la position du tir a changé, efface l'ancien tir
-  if (meme_tire != Pos_X || meme_tire == Pos_X) {
-    times = millis();
-    tft.drawLine(meme_tire, 15, meme_tire, 118, ILI9341_BLACK);
-  }
-
-  // Si un tir est actif, dessine le nouveau tir
+void tire_affichage(void) {
+  static int meme_tire;
+  // Efface le tir précédent (en noir)
+  tft.drawLine(meme_tire, 15, meme_tire, 118, ILI9341_BLACK);
+  // Si un tir est actif, dessine-le et mémorise la position
   if (tire == 1) {
     tft.drawLine(Pos_X, 15, Pos_X, 118, ILI9341_RED);
-    meme_tire = Pos_X; // Met à jour la position mémorisée
-  } else {
-    meme_tire; // Réinitialise si plus de tir actif
+    meme_tire = Pos_X;
   }
 }
 
@@ -350,10 +339,3 @@ void tetris_them(void) {
     }
   }
 }
-
-
-
-
-
-
-
