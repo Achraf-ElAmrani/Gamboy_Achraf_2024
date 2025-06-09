@@ -3,9 +3,9 @@
  <img alt="GitHub followers" src="https://img.shields.io/github/followers/Achraf-ElAmrani?style=flat&logo=github"> <img alt="Static Badge" src="https://img.shields.io/badge/French-8A2BE2"> <img alt="Static Badge" src="https://img.shields.io/badge/Projet-8A2BE2?color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=cplusplus"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=easyeda&color=blue"> <img alt="Static Badge" src="https://img.shields.io/badge/-%20?logo=arduino&color=lightblue">
 
 # Projet en cours de réalisation par : 
-- **Nom,Prénom :** El Amrani Achraf
+- **Nom,Prénom :** El Amrani, Achraf
 - **Ecole :** étudiant a l' INRACI
-- **Annee :** 6 eme technique de qualification
+- **Année :** 6 ème Technique de qualification
 - **Promoteur :** Mr Feliz Kapita 
 ## Video
 ## Sommaire
@@ -154,38 +154,58 @@ Ce projet est bien plus qu’un simple exercice technique : il représente l’a
 
 - Rétroéclairage LED intégré
   
-**mechanique :**
+**méchanique :**
 
-- Poid :
+- Poid : +-200
 
-- Taille :
+- Taille : 150 x 180 mm
 
-- Materiaux :
+- Materiaux : PLA noire
 
 
 ## Schéma de principe
-![Schematic_gameboy_final_2025-03-31](https://github.com/user-attachments/assets/34e4be20-1f5d-4c5e-beee-5dde37f4b80f)
+![Schematic_tfe new pcb_2025-05-25](https://github.com/user-attachments/assets/cb7a7b30-a22e-4e61-8ae9-4fd6e0e7587e)
+
 
 ## le PCB
-![image](https://github.com/user-attachments/assets/ff6a07bb-495c-4cd1-9c17-486cee9259d6)
-![PCB_PCB_gameboy_final_2025-03-31_rouge_bleu](https://github.com/user-attachments/assets/aa09dab5-3835-4bec-b8a7-b3e5cea5c03d)
-![PCB_PCB_gameboy_final_2025-03-31](https://github.com/user-attachments/assets/48dd8dd1-aab3-45cb-8d5d-ffff849005d8)
-![PCB_PCB_gameboy_final_2025-03-31_bleu](https://github.com/user-attachments/assets/871a825a-0fbd-48c3-8dc2-fe9252e4e250)
+![image](https://github.com/user-attachments/assets/37d02db2-0e87-4cfe-8f98-cc12db283481)
+![PCB_PCB_tfe new pcb_2025-05-25](https://github.com/user-attachments/assets/4724c210-2c7c-464c-97e1-544ad8b7c39e)
+![PCB_PCB_tfe new pcb_2025-05-25 blue](https://github.com/user-attachments/assets/014d241a-6f98-40ae-bb4b-5bd0b717202a)
+![PCB_PCB_tfe new pcb_2025-05-25 red](https://github.com/user-attachments/assets/288f6965-b552-4902-8ba6-7acd73b783be)
+
 
 ## Le schéma bloc
-![schema bloque  drawio (2)](https://github.com/user-attachments/assets/83ecc262-afdc-4523-affc-aa4a836d04b1)
+![schema bloque  drawio (2) (1)](https://github.com/user-attachments/assets/45c56a3e-1411-4510-8f06-326771b39b0a)
+
+
 
 ## Ordinogramme
-![Diagramme sans nom drawio](https://github.com/user-attachments/assets/3e8a5729-4d37-4346-be31-3ea31c8e87cd)
+![Diagramme sans nom drawio](https://github.com/user-attachments/assets/8ae01c59-b811-4bfe-89bc-965b45b0a2e4)
+
+
 
 ## 3D 
 ![Capture d'écran 2025-02-04 203529](https://github.com/user-attachments/assets/c2d2cccd-72f5-401e-8e14-7d100f6c450f)
 ![Capture d'écran 2025-02-04 194054](https://github.com/user-attachments/assets/2d69b65a-8281-49bf-bdec-56c905a3ff89)
 ![Capture d'écran 2025-02-04 194103](https://github.com/user-attachments/assets/9dff16ac-fc47-44fa-903b-3567f36d163e)
-![Capture d'écran 2025-02-04 194122](https://github.com/user-attachments/assets/b390fd98-e645-4a37-a916-45a664a20343)
+![Capture d'écran 2025-02-04 194122](https://github.com/user-attachments/assets/3db859a0-42f3-4f18-bb76-f27a79abefc4)
+
+
 ## Bibliothèques nécessaires
 - **Adafruit GFX Library :** https://github.com/adafruit/Adafruit-GFX-Library
 - **Adafruit ILI9341 :** https://github.com/adafruit/Adafruit_ILI9341
 - **Adafruit MCP23008 library :** https://github.com/adafruit/Adafruit-MCP23008-library
 ## Source 
+- **Adafruit MAX98357 I2S Class-D Mono Amp (25/05/2025) :** Downloads | Adafruit MAX98357 I2S Class-D Mono Amp | Adafruit Learning System
+- **I2S (25/05/2025) :** I2S — Wikipédia
+- **MAX98357A Class D'Amplifier (25/05/2025) :** https://youtu.be/At8PDQ3g7FQ
+- **Max98357 - What is I2S ?** https://www.az-delivery.de/en/blogs/azdelivery-blog-fur-arduino-und-raspberrypi/max98357-was-ist-eigentlich-i2s?utm_source=chatgpt.com 
+## Datasheet
+- **ADAFRUIT USB C BREAKOUT BOARD :** [https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/320/4090_Web.pdf](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/320/4090_Web.pdf) 
+- **FEATHER 32U4 BASIC PROTO ATMEGA :** [ https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather-32u4-basic-proto.pdf](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather-32u4-basic-proto.pdf)
+- **MCP73831/2 :** [https://ww1.microchip.com/downloads/en/DeviceDoc/MCP73831-Family-Data-SheetDS20001984H.pdf ](https://ww1.microchip.com/downloads/en/DeviceDoc/MCP73831-Family-Data-Sheet-DS20001984H.pdf)
+- **MINI 2-AXIS ANALOG THUMBSTICK :** https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/813/2765_Web.pdf
+- **MCP1826 :** https://ww1.microchip.com/downloads/en/DeviceDoc/22057B.pdf
+- **MAX98357A :** https://cdn-shop.adafruit.com/product-files/3006/MAX98357A-MAX98357B.pdf
+- **MCP23008 :** https://ww1.microchip.com/downloads/en/DeviceDoc/MCP23008-MCP23S08-Data-Sheet-20001919F.pdf
 
